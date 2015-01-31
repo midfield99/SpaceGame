@@ -1,16 +1,13 @@
 package objects;
 
-import java.awt.image.BufferedImage;
-import java.io.File;
-
-import sprite.ColorImg;
 import sprite.Img;
-import sprite.ImgUpload;
+import desktopView.ColorImg;
 import world.SimpleSolid;
 import world.SimpleObject;
 
 public class BlackSolid extends SimpleSolid{
-	static Img<BufferedImage> img = new ColorImg(0xFF000000, 20, 20);
+	public static int ID = generateID();
+	static Img img = new ColorImg(0xFF000000, 16, 16);
 	
 	public BlackSolid(){
 		this.setImage(img);
@@ -26,6 +23,6 @@ public class BlackSolid extends SimpleSolid{
 
 	@Override
 	public int id() {
-		return 2;
+		return ID;
 	}
 }

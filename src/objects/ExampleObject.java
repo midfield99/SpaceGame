@@ -1,10 +1,9 @@
 package objects;
 
-import java.awt.image.BufferedImage;
 import java.io.File;
 
+import desktopView.DesktopImgUpload;
 import sprite.Img;
-import sprite.ImgUpload;
 import world.SimpleObject;
 import world.SimpleSolid;
 
@@ -17,8 +16,9 @@ There are also some more advanced things you can do that are not described here.
 */
 
 public class ExampleObject extends SimpleObject{ //TODO This object is a SimpleObject. If you want a SimpleSolid just change SimpleObject to SimpleSolid.
-	static File f = new File("resources/images/ExampleObject.png"); //TODO This is the filename of this object's icon.
-	static Img<BufferedImage> img = ImgUpload.getInstance(f.getParentFile()).getImg(f.getName());
+	public static int ID = generateID();
+	static File f = new File("resources/images/objects/ExampleObject/ExampleObject.png"); //TODO This is the filename of this object's icon.
+	static Img img = DesktopImgUpload.getInstance(f.getParentFile()).getImg(f.getName());
 
 	public ExampleObject() {
 		//TODO This method is called whenever a new object of this type is created.
@@ -38,6 +38,6 @@ public class ExampleObject extends SimpleObject{ //TODO This object is a SimpleO
 
 	@Override
 	public int id() {
-		return 4; //TODO Every object needs a unique ID. Change this number to the next available one. 
+		return ID; //TODO Every object needs a unique ID. Change this number to the next available one. 
 	}
 }
